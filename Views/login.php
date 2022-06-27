@@ -1,3 +1,7 @@
+<?php
+    require('../Controllers/User_Controller.php');
+    $controller = new User_Controller();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +22,37 @@
                 <input type="text" class="form-control mb-3" name="user" placeholder="Usuario">
                 <input type="password" class="form-control mb-3" name="pass" placeholder="Contraseña">
                 <div class="d-flex justify-content-center">
-                    <input type="submit" class="btn btn-dark w-50" value="Iniciar">
+                    <input type="submit" class="btn btn-dark w-50" value="Iniciar" name="submit-login" >
                 </div>
             </form>
-            <a href="register.php" class="link mt-3">Registrarse</a>
+            <?php
+                if(isset($_POST['submit-login'])){
+                    if(strlen($_POST['user']) && strlen($_POST['pass'])){
+                        
+                        $result = $controller->valid($_POST['user'], $_POST['pass']);
+
+                        if (empty($result)) {
+                            # code...
+                            echo "<div class='alert alert-danger mt-3 ' role='alert'>
+                                Las credenciales ingresadas no existen
+                            </div>";
+                        }else{
+                            // session_start();
+                            // if(isset($_SESSION['user'])){
+                                
+                            //     $_SESSION['user'] = $result["user"];
+                            // }
+                            // si sabes como bien como crear la variable de sesion
+                            // me ayudas con eso
+
+                            header('Location: main.php');
+                        }
+                    }
+                }
+            ?>
         </div>
     </div>
     
+
 </body>
 </html>

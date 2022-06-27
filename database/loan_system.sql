@@ -61,12 +61,22 @@ CREATE TABLE `register_lends` (
   `mail_student` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+CREATE TABLE `users`(
+  `id_user` integer PRIMARY KEY AUTO_INCREMENT,
+  `user`    varchar(80) NOT NULL,
+  `email`   varchar(80) UNIQUE NOT NULL,
+  `pass`    char(32) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `users`( `user`,`email`, `pass`) VALUES
+("manuel", "manuel@gmail.com", MD5("password"));
 --
 -- Volcado de datos para la tabla `register_lends`
 --
 
-INSERT INTO `register_lends` (`id_lend`, `date_lend`, `title_book`, `name_student`, `ci_student`, `telf_student`, `mail_student`) VALUES
-(3, '2022-06-01', 'Calculo Integral 2', 'Carlos Sánchez m', 29805180, 2147483647, 'sanchezcarloscasm@gmail.com');
+-- INSERT INTO `register_lends` (`id_lend`, `date_lend`, `title_book`, `name_student`, `ci_student`, `telf_student`, `mail_student`) VALUES
+-- (3, '2022-06-01', 'Calculo Integral 2', 'Carlos Sánchez m', 29805180, 2147483647, 'sanchezcarloscasm@gmail.com');
 
 --
 -- Índices para tablas volcadas
