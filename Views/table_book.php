@@ -61,6 +61,7 @@ $books_array = $controller->read();
         if (isset($_POST['delete'])) {
             // var_dump($_POST['delete']);
             $controller->delete($_POST['delete']);
+            
         }
     }
     ?>

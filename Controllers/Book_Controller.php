@@ -19,7 +19,6 @@ class Book_Controller{
     }
     public function update(){
         return $this->book->getConn();
-        header('Location: table_book.php');
     }
     public function delete($id){
         $id_int = intval($id);

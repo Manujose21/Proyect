@@ -19,7 +19,6 @@ class Lend_Controller{
     }
     public function update(){
         return $this->lend->getConn();
-        header('Location: table_lend.php');
     }
     public function delete($id){
         $id_int = intval($id);
