@@ -10,6 +10,8 @@ class lend_model extends Model{
     private $telf_student;
     private $mail_student;
     private $past_contests;
+    private $id_lend;
+    
 
     public function create($data = array()){
         foreach( $data as $key => $value ){

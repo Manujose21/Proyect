@@ -70,7 +70,6 @@ class book_model extends Model
     public function delete($id = "")
     {
         $query = "DELETE FROM register_books WHERE id_book = $id";
-        $this->set_query($query);
-        
+        $this->set_query($query); 
     }
 }
