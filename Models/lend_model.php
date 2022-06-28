@@ -66,7 +66,7 @@ class lend_model extends Model{
       }
 
     public function delete($id = ""){
-        $query = "DELETE FROM register_lends WHERE id_user = $id";
+        $query = "DELETE FROM register_lends WHERE id_lend = $id";
         $this->set_query($query);
     }
 }
