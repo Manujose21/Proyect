@@ -11,10 +11,6 @@ class lend_model extends Model{
     private $mail_student;
     private $past_contests;
     private $id_lend;
-<<<<<<< HEAD
-=======
-    
->>>>>>> 969e6af9eadc162d204b97b6b4d4ef4bffdbc2f1
 
     public function create($data = array()){
         foreach( $data as $key => $value ){

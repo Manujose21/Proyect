@@ -41,7 +41,7 @@ class User_Controller{
             //     $_SESSION['user'] = $result["user"];
             // }
             // si sabes como bien como crear la variable de sesion
-            // me ayudas con eso
+            // me ayudas con eso        
 
             return header('Location: main.php');
         }

@@ -1,3 +1,4 @@
+<?php include("./session.php"); ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +21,17 @@
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
+                <!-- MESSAGES -->
+
+                <?php if (isset($_SESSION['message'])) { ?>
+                <div>
+                <li class="nav-item">
+                  <a class="nav-link" href=""><?= $_SESSION['message']?></a>
+                </li>
+                </div>
+
+              <?php  } ?>
+              <!-- session_unset(); -->
         </ul>
       </div>
     </div>

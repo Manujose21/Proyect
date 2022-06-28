@@ -1,4 +1,5 @@
 <?php
+    include("./session.php");
     require('../Controllers/User_Controller.php');
     $controller = new User_Controller();
 ?>
@@ -28,9 +29,9 @@
             <?php
                 if(isset($_POST['submit-login'])){
                     if(strlen($_POST['user']) && strlen($_POST['pass'])){
-
+                        $_SESSION['message'] = $_POST['user'];
                         $result = $controller->valid($_POST['user'], $_POST['pass']);
-                    
+                       
                     }
                 }
             ?>
