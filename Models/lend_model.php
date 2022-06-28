@@ -4,12 +4,12 @@ require_once("Model.php");
 class lend_model extends Model{
 
     private $date_lend;
+    private $limit_date;
     private $title_book;
     private $name_student;
     private $ci_student;
     private $telf_student;
     private $mail_student;
-    private $past_contests;
     private $id_lend;
 
     public function create($data = array()){
@@ -17,8 +17,8 @@ class lend_model extends Model{
             $$key = $value;
         }
 
-        $query = "INSERT INTO register_lends(date_lend, title_book, name_student, ci_student, telf_student, mail_student) 
-        VALUES ('$date_lend','$title_book','$name_student','$ci_student', '$telf_student', '$mail_student')";
+        $query = "INSERT INTO register_lends(date_lend, limit_date, title_book, name_student, ci_student, telf_student, mail_student) 
+        VALUES ('$date_lend', '$limit_date', '$title_book', '$name_student', '$ci_student', '$telf_student', '$mail_student')";
 
         $this->set_query($query);
     }
@@ -44,12 +44,13 @@ class lend_model extends Model{
             $$key = $value;
         }
         $query = "UPDATE register_lends SET 
+        date_lend = '$date_lend',
+        limit_date = '$limit_date',
         title_book = '$title_book',
         name_student = '$name_student',
         ci_student = '$ci_student',
         telf_student = '$telf_student',
         mail_student = '$mail_student',
-        past_contest = $past_contests
         ";
        
     }

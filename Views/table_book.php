@@ -11,9 +11,9 @@ $books_array = $controller->read();
 
 <main class="container">
 
-    <a href="register-book.php" class="btn btn-dark">Registrar libro</a>
+    <a href="table_lend.php" class="btn btn-primary">Tabla de prestamos</a>
 
-    <a href="register-lend.php" class="btn btn-dark">Registrar prestamo</a>
+    <a href="register-book.php" class="btn btn-secondary">Registrar libro</a>
 
     <h1 class="text-center m-3">Tabla de libros</h1>
 
@@ -52,7 +52,7 @@ $books_array = $controller->read();
     </table>
     <p class="p-style"> <b>Total de registros:</b> <?php echo "$num"; ?></p>
 
-    <input type="submit" class="btn btn-success btn-block" value="Eliminar" name="submit-delete">
+    <input type="submit" class="btn btn-danger btn-block" value="Eliminar" name="submit-delete">
 
     </form>
     
