@@ -28,25 +28,9 @@
             <?php
                 if(isset($_POST['submit-login'])){
                     if(strlen($_POST['user']) && strlen($_POST['pass'])){
-                        
+
                         $result = $controller->valid($_POST['user'], $_POST['pass']);
-
-                        if (empty($result)) {
-                            # code...
-                            echo "<div class='alert alert-danger mt-3 ' role='alert'>
-                                Las credenciales ingresadas no existen
-                            </div>";
-                        }else{
-                            // session_start();
-                            // if(isset($_SESSION['user'])){
-                                
-                            //     $_SESSION['user'] = $result["user"];
-                            // }
-                            // si sabes como bien como crear la variable de sesion
-                            // me ayudas con eso
-
-                            header('Location: main.php');
-                        }
+                    
                     }
                 }
             ?>

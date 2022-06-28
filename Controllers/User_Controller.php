@@ -28,7 +28,22 @@ class User_Controller{
     }
     public function valid($user, $pass){
 
-        return $this->user->validateUser($user, $pass);
+        $result = $this->user->validateUser($user, $pass);
+        if (empty($result)) {
+            # code...
+            return print "<div class='alert alert-danger mt-3 ' role='alert'>
+                Las credenciales ingresadas no existen
+            </div>";
+        }else{
+            // session_start();
+            // if(isset($_SESSION['user'])){
+                
+            //     $_SESSION['user'] = $result["user"];
+            // }
+            // si sabes como bien como crear la variable de sesion
+            // me ayudas con eso
 
+            return header('Location: main.php');
+        }
     }
 }
