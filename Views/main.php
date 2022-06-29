@@ -50,27 +50,26 @@ if (isset($_SESSION['message'])) { ?>
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Generar reporte</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
+        <form action="./generate_report.php" method="post">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Generar reporte</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
             <div>
               <label for="select-report" class="col-form-label">Seleccione tipo de reporte a generar:</label>
-              <select class="form-select" aria-label="Default select example" class="form-control" id="select-report">
+              <select class="form-select" aria-label="Default select example" class="form-control" id="select-report" name="report_name">
                 <option selected></option>
-                <option value="1">Reporte de prestamos</option>
-                <option value="2">Reporte de morosos</option>
-                <option value="3">Reporte de Libros</option>
+                <option value="lend" >Reporte de prestamos</option>
+                <option value="book" >Reporte de Libros</option>
               </select>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Generar</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" name="generate" class="btn btn-primary">Generar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
