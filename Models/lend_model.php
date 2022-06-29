@@ -17,8 +17,8 @@ class lend_model extends Model{
             $$key = $value;
         }
 
-        $query = "INSERT INTO register_lends(date_lend, limit_date, title_book, name_student, ci_student, telf_student, mail_student) 
-        VALUES ('$date_lend', '$limit_date', '$title_book', '$name_student', '$ci_student', '$telf_student', '$mail_student')";
+        $query = "INSERT INTO register_lends(date_lend, limit_date, title_book, name_student, ci_student) 
+        VALUES ('$date_lend', '$limit_date', '$title_book', '$name_student', '$ci_student')";
 
         $this->set_query($query);
     }
@@ -49,10 +49,7 @@ class lend_model extends Model{
         title_book = '$title_book',
         name_student = '$name_student',
         ci_student = '$ci_student',
-        telf_student = '$telf_student',
-        mail_student = '$mail_student',
         ";
-       
     }
 
     public function getConn() {

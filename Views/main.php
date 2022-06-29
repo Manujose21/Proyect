@@ -4,7 +4,7 @@
 
 <main class="wrapper mb-5">
 
-    <h1 class="text-center">Sistema de prestamos</h1>
+    <h1 class="text-center mb-5">Sistema de prestamos</h1>
 
     <div class="row">
       <div class="col-12 col-md-6 mb-3">

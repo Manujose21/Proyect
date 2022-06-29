@@ -29,8 +29,6 @@ $lends_array = $controller->read();
                     <th>Libro</th>
                     <th>Estudiante</th>
                     <th>CI del estudiante</th>
-                    <th>Telf del estudiante</th>
-                    <th>Correo del estudiante</th>
                     <th>Actualizar</th>
                     <th>Eliminar</th>
                 </thead>";
@@ -42,8 +40,6 @@ $lends_array = $controller->read();
                         <td>" . $lends_array[$i]["title_book"] . "</td>
                         <td>" . $lends_array[$i]["name_student"] . "</td>
                         <td>" . $lends_array[$i]["ci_student"] . "</td>
-                        <td>" . $lends_array[$i]["telf_student"] . "</td>
-                        <td>" . $lends_array[$i]["mail_student"] . "</td>
                         <td>"; ?><a href="update_lend.php?id=<?php echo $i ?>" class="boton1"><img src="../public/images/marcador.png" id="marcador" class="icono" height="20px" width="20px"></a></td>
     <?php echo "<td><input type='radio' value=" . $lends_array[$i]["id_lend"] . " name='delete'></td>
                     </tr>";

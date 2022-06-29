@@ -34,3 +34,7 @@ nav {
     text-align: center;
     font-size: 1.15em;
 }
+
+.table table {
+    text-align: center !important;
+}
