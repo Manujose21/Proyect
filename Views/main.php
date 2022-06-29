@@ -1,8 +1,14 @@
-<?php include('./header.php'); ?>
+<?php
+include("./session.php");
 
-<?php include('./nav-bar.php') ?>
+if (isset($_SESSION['message'])) { ?>
 
-<main class="wrapper mb-5">
+
+  <?php include('./header.php'); ?>
+
+  <?php include('./nav-bar.php') ?>
+
+  <main class="wrapper mb-5">
 
     <h1 class="text-center mb-5">Sistema de prestamos</h1>
 
@@ -14,8 +20,8 @@
             <p class="card-text">Agrega, elimina y filtra los datos almacenados en el sistema.</p>
           </div>
           <div class="card-footer d-flex justify-content-around ">
-            <a href="table_book.php" class="btn btn-primary w-50 me-2" >Registros de libros</a>
-            <a href="table_lend.php" class="btn btn-primary w-50" >Registros de prestamos</a>
+            <a href="table_book.php" class="btn btn-primary w-50 me-2">Registros de libros</a>
+            <a href="table_lend.php" class="btn btn-primary w-50">Registros de prestamos</a>
           </div>
         </div>
       </div>
@@ -40,7 +46,7 @@
     <div class="space-container-big"></div>
 
   </main>
-  
+
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -69,4 +75,10 @@
     </div>
   </div>
 
-<?php include('./footer.php'); ?>
+  <?php include('./footer.php'); ?>
+
+
+
+<?php  } else {
+  header('Location: login.php');
+} ?>

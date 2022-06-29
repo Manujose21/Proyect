@@ -3,6 +3,13 @@ include("./session.php");
 require('../Controllers/User_Controller.php');
 $controller = new User_Controller();
 ?>
+
+<?php
+// if (isset($_SESSION['message'])) {
+//     session_unset();
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,11 +51,12 @@ $controller = new User_Controller();
     $controller = new Binnacle_Controller();
     if (isset($_POST['submit-login'])) {
         $data = array(
-            "user"   => $_POST['user'],
+            "user" => $_POST['user'],
         );
         $controller->create($data);
     }
     ?>
+
 
 
 </body>

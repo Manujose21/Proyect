@@ -42,7 +42,7 @@ class User_Controller{
             // }
             // si sabes como bien como crear la variable de sesion
             // me ayudas con eso        
-
+            
             return header('Location: main.php');
         }
     }

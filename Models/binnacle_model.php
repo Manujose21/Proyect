@@ -13,7 +13,7 @@ class binnacle_model extends Model{
         }
 
         $query = "INSERT INTO binnacle_activity(user) 
-        VALUES ('$user', '$date_activity')";
+        VALUES ('$user')";
 
         $this->set_query($query);
     }

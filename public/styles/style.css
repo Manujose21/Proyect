@@ -38,3 +38,7 @@ nav {
 .table table {
     text-align: center !important;
 }
+
+.sesion::after {
+    content: none;
+}
