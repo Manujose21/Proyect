@@ -1,16 +1,16 @@
 <?php
 require_once("Model.php");
-
-class user_model extends Model{
+class user_model extends Model
+{
 
     private $id_user;
     private $email;
     private $user;
     private $pass;
-    
 
-    public function create($data = array()){
-        foreach( $data as $key => $value ){
+    public function create($data = array())
+    {
+        foreach ($data as $key => $value) {
             $$key = $value;
         }
 
@@ -20,11 +20,12 @@ class user_model extends Model{
         $this->set_query($query);
     }
 
-    public function read( $id="" ){
+    public function read($id = "")
+    {
 
-        if($id != ""){
+        if ($id != "") {
             $query = "SELECT * FROM users WHERE id_lend = $id";
-        }else{
+        } else {
             $query = "SELECT * FROM users";
         }
 
@@ -35,9 +36,10 @@ class user_model extends Model{
         return $results;
     }
 
-    public function update($data = array()){
+    public function update($data = array())
+    {
 
-        foreach( $data as $key => $value ){
+        foreach ($data as $key => $value) {
             $$key = $value;
         }
         $query = "UPDATE users SET 
@@ -45,26 +47,28 @@ class user_model extends Model{
             'email' = '$email',
             'pass' = MD5('$pass')
         ";
-       
     }
-    public function validateUser($user, $pass){
+    public function validateUser($user, $pass)
+    {
         $query = "SELECT * FROM users WHERE user = '$user' AND pass = MD5('$pass')";
         $result = $this->get_query($query);
         array_pop($result);
         return $result;
     }
 
-    public function getConn() {
+    public function getConn()
+    {
         $conexion = mysqli_connect(
-           'localhost',
-           'root',
-           '',
-           'loan_system'
-         );
-         return $conexion;
-      }
+            'localhost',
+            'root',
+            '',
+            'loan_system'
+        );
+        return $conexion;
+    }
 
-    public function delete($id = ""){
+    public function delete($id = "")
+    {
         $id_user = intval($id);
         $query = "DELETE FROM users WHERE id_user = $id_user";
         $this->set_query($query);

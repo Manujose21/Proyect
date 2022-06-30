@@ -1,4 +1,10 @@
 <?php
+include("./session.php");
+
+if (isset($_SESSION['message'])) { ?>
+
+
+<?php
 
 require('../Controllers/Lend_Controller.php');
 $controller = new Lend_Controller();
@@ -8,7 +14,6 @@ $lends_array = $controller->read();
 ?>
 
 <?php
-
         if (isset($_POST['update_lend'])) {
 
             $id_lend = $lends_array[$_GET['id']]["id_lend"];
@@ -39,7 +44,7 @@ $lends_array = $controller->read();
 
 <main>
   
-<div class="container_form">
+<div class="container col-md-6">
     
 <form class="row g-1" action="" method="POST">
 
@@ -80,3 +85,7 @@ $lends_array = $controller->read();
 </main>
 
 <?php include('./footer.php'); ?>
+
+<?php  } else {
+  @header('Location: login.php');
+}

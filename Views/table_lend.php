@@ -1,16 +1,18 @@
 <?php
+include("./session.php");
+
+if (isset($_SESSION['message'])) { ?>
+
+<?php
 require('../Controllers/Lend_Controller.php');
 $controller = new Lend_Controller();
 
 $lends_array = $controller->read();
 ?>
-
 <?php include('./header.php'); ?>
-
 <?php include('./nav-bar.php') ?>
+<main class="container col-md-10">
 
-<main class="container">
-    
     <a href="table_book.php" class="btn btn-primary">Tabla de libros</a>
 
     <a href="register-lend.php" class="btn btn-secondary">Registrar prestamo</a>
@@ -20,8 +22,9 @@ $lends_array = $controller->read();
     <?php
     $num = count($lends_array);
 
+
     echo "<form method='post'>
-            <table class='table'>
+            <table class='table text-center'>
                 <thead>
                     <th>ID</th>
                     <th>Fecha</th>
@@ -33,14 +36,20 @@ $lends_array = $controller->read();
                     <th>Eliminar</th>
                 </thead>";
     for ($i = 0; $i < $num; $i++) {
+        $original_date_lend = $lends_array[$i]["date_lend"];
+        $formated_date_lend = date("d/m/Y", strtotime($original_date_lend));
+
+        $original_limit_date = $lends_array[$i]["limit_date"];
+        $formated_limit_date = date("d/m/Y", strtotime($original_limit_date));
+
         echo "<tr>
                         <td>" . $lends_array[$i]["id_lend"] . "</td>
-                        <td>" . $lends_array[$i]["date_lend"] . "</td>
-                        <td>" . $lends_array[$i]["limit_date"] . "</td>
+                        <td>" . $formated_date_lend . "</td>
+                        <td>" . $formated_limit_date . "</td>
                         <td>" . $lends_array[$i]["title_book"] . "</td>
                         <td>" . $lends_array[$i]["name_student"] . "</td>
                         <td>" . $lends_array[$i]["ci_student"] . "</td>
-                        <td>"; ?><a href="update_lend.php?id=<?php echo $i ?>" class="boton1"><img src="../public/images/marcador.png" id="marcador" class="icono" height="20px" width="20px"></a></td>
+                        <td>"; ?><a href="update_lend.php?id=<?php echo $i;?>" class="boton1"><img src="../public/images/marcador.png" id="marcador" class="icono" height="20px" width="20px"></a></td>
     <?php echo "<td><input type='radio' value=" . $lends_array[$i]["id_lend"] . " name='delete'></td>
                     </tr>";
     }
@@ -56,8 +65,8 @@ $lends_array = $controller->read();
     <?php
     if (isset($_POST['submit-delete'])) {
         if (isset($_POST['delete'])) {
-            // var_dump($_POST['delete']);
             $controller->delete($_POST['delete']);
+            @header('Location: table_lend.php');
         }
     }
     ?>
@@ -65,3 +74,7 @@ $lends_array = $controller->read();
 </main>
 
 <?php include('./footer.php'); ?>
+
+<?php  } else {
+  @header('Location: login.php');
+}

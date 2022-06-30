@@ -1,7 +1,5 @@
 <?php 
-
 require_once("../Models/user_model.php");
-
 class User_Controller{
 
     private $user;
@@ -35,15 +33,7 @@ class User_Controller{
                 Las credenciales ingresadas no existen
             </div>";
         }else{
-            // session_start();
-            // if(isset($_SESSION['user'])){
-                
-            //     $_SESSION['user'] = $result["user"];
-            // }
-            // si sabes como bien como crear la variable de sesion
-            // me ayudas con eso        
-            
-            return header('Location: main.php');
+            return @header('Location: main.php');
         }
     }
 }

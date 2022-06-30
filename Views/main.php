@@ -3,14 +3,11 @@ include("./session.php");
 
 if (isset($_SESSION['message'])) { ?>
 
-
   <?php include('./header.php'); ?>
-
   <?php include('./nav-bar.php') ?>
+  <main class="mb-5 container col-md-8">
 
-  <main class="wrapper mb-5">
-
-    <h1 class="text-center mb-5">Sistema de prestamos</h1>
+    <h1 class="text-center mb-4">Sistema de prestamos</h1>
 
     <div class="row">
       <div class="col-12 col-md-6 mb-3">
@@ -31,16 +28,11 @@ if (isset($_SESSION['message'])) { ?>
             <h5 class="card-title">Generar reportes</h5>
             <p class="card-text">Filtra de forma personalizada las transacciones que se han realizado en el sistema..</p>
           </div>
-          <div class="card-footer">
+          <div class="card-footer text-center">
             <a href="#" class="btn btn-primary w-50" data-bs-toggle="modal" data-bs-target="#exampleModal1" data-bs-whatever="@getbootstrap">Generar</a>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="input-group mb-5 mt-3">
-      <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
     </div>
 
     <div class="space-container-big"></div>
@@ -76,8 +68,7 @@ if (isset($_SESSION['message'])) { ?>
 
   <?php include('./footer.php'); ?>
 
-
-
+  
 <?php  } else {
-  header('Location: login.php');
-} ?>
+  @header('Location: login.php');
+}

@@ -1,9 +1,6 @@
 <?php
 require_once("Model.php");
-
 class report_model extends Model{
-
-   
 
     public function create($data = array()){
     }

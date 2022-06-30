@@ -1,14 +1,16 @@
 <?php
+include("./session.php");
+
+if (isset($_SESSION['message'])) { ?>
+<?php
 
 require('../Controllers/Book_Controller.php');
+
 $controller = new Book_Controller();
 
 $books_array = $controller->read();
 
-?>
-
-<?php
-
+?><?php
         if (isset($_POST['update_book'])) {
 
             $id_book = $books_array[$_GET['id']]["id_book"];
@@ -32,15 +34,11 @@ $books_array = $controller->read();
             mysqli_query($conexion, $query);
             header('Location: table_book.php');
         }
-?>
-
-<?php include('./header.php'); ?>
-
+?><?php include('./header.php'); ?>
 <?php include('./nav-bar.php') ?>
-
 <main>
 
-    <div class="container_form">
+    <div class="container col-md-6">
 
         <form class="row g-1"  method="POST">
 
@@ -85,8 +83,10 @@ $books_array = $controller->read();
 
     </div>
 
-    
-
 </main>
 
 <?php include('./footer.php'); ?>
+
+<?php  } else {
+  @header('Location: login.php');
+}

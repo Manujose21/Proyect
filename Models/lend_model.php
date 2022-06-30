@@ -1,6 +1,5 @@
 <?php
 require_once("Model.php");
-
 class lend_model extends Model{
 
     private $date_lend;

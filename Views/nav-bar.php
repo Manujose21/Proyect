@@ -21,11 +21,8 @@
             <li><a class="dropdown-item" href="./binnacle.php">Bitacora</a></li>
           </ul>
         </li>
-        <!-- MESSAGES -->
-
         <?php if (isset($_SESSION['message'])) { ?>
           <div>
-
             <li class="nav-item dropdown ms-5 me-5">
               <a class="nav-link dropdown-toggle sesion" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false"><img src="../public/images/usuario.png" id="marcador" class="icono" height="25px" width="25px"> <?= $_SESSION['message'] ?></a>
               <a class="nav-link-toggle" href=""></a>
@@ -34,10 +31,7 @@
               </ul>
             </li>
           </div>
-
-        <?php  } ?>
-
-        <!-- session_unset//(); -->
+        <?php }?>
       </ul>
     </div>
   </div>

@@ -1,7 +1,5 @@
 <?php 
-
 require_once("../Models/binnacle_model.php");
-
 class Binnacle_Controller{
 
     private $binnacle;

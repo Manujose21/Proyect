@@ -2,15 +2,7 @@
 include("./session.php");
 require('../Controllers/User_Controller.php');
 $controller = new User_Controller();
-?>
-
-<?php
-// if (isset($_SESSION['message'])) {
-//     session_unset();
-// }
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,7 +14,7 @@ $controller = new User_Controller();
     <title>Iniciar Sesion</title>
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark container col-md-8">
     <div class="d-flex justify-content-center mt-5">
         <div class="card w-50 p-4 bg-ligth">
 
@@ -57,8 +49,5 @@ $controller = new User_Controller();
     }
     ?>
 
-
-
 </body>
-
 </html>

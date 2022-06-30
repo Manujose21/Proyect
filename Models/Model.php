@@ -52,5 +52,4 @@ abstract class Model {
         return $this->rows;
 
     }
-
 }

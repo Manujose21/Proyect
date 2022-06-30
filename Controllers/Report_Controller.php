@@ -1,6 +1,5 @@
 <?php
 require_once("../Models/report_model.php");
-
 class Report_Controller{
 
     private $report;
@@ -93,6 +92,4 @@ class Report_Controller{
             return $data;
         }
     }
-    
-   
 }
