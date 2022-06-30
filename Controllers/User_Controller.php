@@ -1,30 +1,37 @@
-<?php 
+<?php
 require_once("../Models/user_model.php");
-class User_Controller{
+class User_Controller
+{
 
     private $user;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->user = new user_model();
     }
 
-    public function create($data){
+    public function create($data)
+    {
         $this->user->create($data);
         // header('Location: table_book.php');
     }
-    public function read(){
+    public function read()
+    {
         return $this->user->read();
     }
-    public function update(){
+    public function update()
+    {
         return $this->user->getConn();
         // header('Location: table_book.php');
     }
-    public function delete($id){
+    public function delete($id)
+    {
         $id_int = intval($id);
         $this->user->delete($id_int);
         // header('Location: table_book.php');
     }
-    public function valid($user, $pass){
+    public function valid($user, $pass)
+    {
 
         $result = $this->user->validateUser($user, $pass);
         if (empty($result)) {
@@ -32,7 +39,15 @@ class User_Controller{
             return print "<div class='alert alert-danger mt-3 ' role='alert'>
                 Las credenciales ingresadas no existen
             </div>";
-        }else{
+        } else {
+            $_SESSION['message'] = $user;
+            
+            require("Binnacle_Controller.php");
+            $controller = new Binnacle_Controller();
+            $data = array(
+                "user" => $user,
+            );
+            $controller->create($data);
             return @header('Location: main.php');
         }
     }

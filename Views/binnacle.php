@@ -27,7 +27,7 @@ if (isset($_SESSION['message'])) { ?>
                 </thead>";
         for ($i = 0; $i < $num; $i++) {
             $original_date_activity =  $binnacle_array[$i]["date_activity"];
-            $formated_date_activity = date("d/m/Y", strtotime($original_date_activity));
+            $formated_date_activity = date("d/m/Y H:i:s", strtotime($original_date_activity));
 
             echo "<tr>
                         <td>" . $formated_date_activity . "</td>

@@ -30,23 +30,25 @@ $controller = new User_Controller();
             <?php
             if (isset($_POST['submit-login'])) {
                 if (strlen($_POST['user']) && strlen($_POST['pass'])) {
-                    $_SESSION['message'] = $_POST['user'];
                     $result = $controller->valid($_POST['user'], $_POST['pass']);
                 }
+                
             }
             ?>
         </div>
     </div>
 
     <?php
-    require("../Controllers/Binnacle_Controller.php");
-    $controller = new Binnacle_Controller();
-    if (isset($_POST['submit-login'])) {
-        $data = array(
-            "user" => $_POST['user'],
-        );
-        $controller->create($data);
-    }
+    // require("../Controllers/Binnacle_Controller.php");
+    // $controller = new Binnacle_Controller();
+    // if (isset($_POST['submit-login'])) {
+    //     if (($_POST['user']) && $_POST['pass']) {
+    //         $data = array(
+    //         "user" => $_POST['user'],
+    //     );
+    //     $controller->create($data);
+    //     }
+    // }
     ?>
 
 </body>
