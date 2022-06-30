@@ -25,12 +25,12 @@ if (isset($_SESSION['message'])) { ?>
 
       <div class="form-group mb-3">
         <label for="book" class="form-label">Libro prestado</label>
-        <input type="text" class="form-control" id="title_book" name="title_book" placeholder="">
+        <input type="text" class="form-control" id="title_book" name="title_book" placeholder="" required>
       </div>
 
       <div class="form-group mb-3 col-md-6">
         <label for="name_student" class="form-label">Nombre del estudiante</label>
-        <input type="text" class="form-control" id="name_student" name="name_student" placeholder="">
+        <input type="text" class="form-control" id="name_student" name="name_student" placeholder="" required>
       </div>
 
       <div class="form-group col-md-6">

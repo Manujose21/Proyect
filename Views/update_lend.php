@@ -61,12 +61,12 @@ $lends_array = $controller->read();
 
   <div class="form-group mb-3">
     <label for="book" class="form-label">Libro prestado</label>
-    <input type="text" class="form-control" id="title_book" name="title_book" value="<?php echo $lends_array[$_GET['id']]['title_book']; ?>">
+    <input type="text" class="form-control" id="title_book" name="title_book" value="<?php echo $lends_array[$_GET['id']]['title_book']; ?>" required>
   </div>
 
   <div class="form-group mb-3 col-md-6">
     <label for="name_student" class="form-label">Nombre del estudiante</label>
-    <input type="text" class="form-control" id="name_student" name="name_student" value="<?php echo $lends_array[$_GET['id']]['name_student']; ?>">
+    <input type="text" class="form-control" id="name_student" name="name_student" value="<?php echo $lends_array[$_GET['id']]['name_student']; ?>" required>
   </div>
 
   <div class="form-group col-md-6">

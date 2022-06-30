@@ -46,28 +46,28 @@ $books_array = $controller->read();
 
             <div class="form-group mb-3">
                 <label for="book" class="form-label">Titulo del libro</label>
-                <input type="text" class="form-control" id="title_book" name="title_book" value="<?php echo $books_array[$_GET['id']]['title_book']; ?>">
+                <input type="text" class="form-control" id="title_book" name="title_book" value="<?php echo $books_array[$_GET['id']]['title_book']; ?>" required>
             </div>
 
 
             <div class="form-group mb-3">
                 <label for="book" class="form-label">Disciplina</label>
-                <input type="text" class="form-control" id="discipline_book" name="discipline_book" value="<?php echo $books_array[$_GET['id']]["discipline_book"]; ?>">
+                <input type="text" class="form-control" id="discipline_book" name="discipline_book" value="<?php echo $books_array[$_GET['id']]["discipline_book"]; ?>" required>
             </div>
 
             <div class="form-group mb-3 col-md-6">
                 <label for="book" class="form-label">Grado orientado</label>
-                <input type="text" class="form-control" id="level_book" name="level_book" value="<?php echo $books_array[$_GET['id']]["level_book"]; ?>">
+                <input type="text" class="form-control" id="level_book" name="level_book" value="<?php echo $books_array[$_GET['id']]["level_book"]; ?>" required>
             </div>
 
             <div class="form-group mb-3 col-md-6">
                 <label for="book" class="form-label">Autor</label>
-                <input type="text" class="form-control" id="author_book" name="author_book" value="<?php echo $books_array[$_GET['id']]["author_book"]; ?>">
+                <input type="text" class="form-control" id="author_book" name="author_book" value="<?php echo $books_array[$_GET['id']]["author_book"]; ?>" required>
             </div>
 
             <div class="form-group mb-3 col-md-6">
                 <label for="book" class="form-label">Editorial</label>
-                <input type="text" class="form-control" id="editorial_book" name="editorial_book" value="<?php echo $books_array[$_GET['id']]["editorial_book"]; ?>">
+                <input type="text" class="form-control" id="editorial_book" name="editorial_book" value="<?php echo $books_array[$_GET['id']]["editorial_book"]; ?>" required>
             </div>
 
             <div class="form-group mb-3 col-md-6">
